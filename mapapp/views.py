@@ -29,6 +29,10 @@ def index(request):
 
     return render(request, 'mapapp/index.html', {'cctvs': test_difference})
 
+def main(request):
+    cctvs = Cctv.objects.all()
+
+    return render(request, 'mapapp/main.html', {'cctvs': cctvs})
 
 class CctvList(generics.ListCreateAPIView):
     queryset = Cctv.objects.all()
