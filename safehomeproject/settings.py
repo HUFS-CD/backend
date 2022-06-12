@@ -25,10 +25,7 @@ SECRET_KEY = 'django-insecure-grdu13$7n1gu!xl!%1*@4zvqp+o)h$$n6=)$#mwzykjm17dx6!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '*',
-    ".safehomenav.shop",
-    ]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
