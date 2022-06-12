@@ -20,5 +20,8 @@ import mapapp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('mapapp.urls'))
+    path('', include('mapapp.urls')),
+    path('search/', include('searchapp.urls')),
+    path('test/', include('searchapp.urls'))
+
 ]

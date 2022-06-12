@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mapapp',
+    'searchapp',
     'import_export',
     'rest_framework',
     'corsheaders',

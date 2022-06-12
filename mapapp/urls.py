@@ -7,7 +7,6 @@ from mapapp.views import CctvList, CctvDetailList
 
 urlpatterns = [
     path('', views.index),
-    path('main/', views.main),
     path('cctv/', CctvList.as_view()),
     path('cctv/<int:pk>/', CctvDetailList.as_view())
 ]
