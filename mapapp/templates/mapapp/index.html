@@ -448,6 +448,43 @@
   });
   //------ --------- ------//
 
+  let dragging = false;
+
+  map.addListener("touchstart", (e) => {
+    dragging = false;
+    console.log("start");
+  });
+
+  map.addListener("touchmove", (e) => {
+    dragging = true;
+    console.log("move");
+  });
+
+  map.addListener("touchend", (e) => {
+    if (!dragging) {
+      searched = false;
+      removeLine();
+      removeMarkers();
+      removeSearchMarkers();
+
+      navigateOpen();
+      searchClose();
+      console.log("touched");
+
+      lat_clicked = e.latLng.lat();
+      lon_clicked = e.latLng.lng();
+      console.log(lat_clicked, lon_clicked);
+
+      let marker_e = new Tmapv2.Marker({
+        position: new Tmapv2.LatLng(lat_clicked, lon_clicked), //Marker의 중심좌표 설정.
+        icon: "http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_m_e.png",
+        iconSize: new Tmapv2.Size(24, 38),
+        map: map,
+      });
+      markers.push(marker_e);
+    } else return;
+  });
+
   //------ 명칭 검색 후 마커 생성 ------//
   $("#btn_select").on("click", () => {
     let searchKeyword = $("#searchKeyword").val();
@@ -505,6 +542,26 @@
         marker_search.index = i;
 
         marker_search.addListener("click", () => {
+          searched = true;
+          selected_position = marker_search.getPosition();
+          searchOpen();
+          removeMarkers();
+          removeSearchMarkers();
+          navigateOpen();
+          marker_selected = new Tmapv2.Marker({
+            position: selected_position,
+
+            icon: "http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_m_e.png",
+
+            iconSize: new Tmapv2.Size(24, 38),
+            title: name,
+            map: map,
+            index: i,
+          });
+          marker_selectedArr.push(marker_selected);
+        });
+
+        marker_search.addListener("touchend", () => {
           searched = true;
           selected_position = marker_search.getPosition();
           searchOpen();
