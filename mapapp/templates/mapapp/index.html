@@ -378,7 +378,7 @@
   });
 
   axios
-    .get("cctv-database:3306")
+    .get("cctv-database.cwpl95oqcakk.ap-northeast-2.rds.amazonaws.com:3306/cctv")
     .then((response) => {
       coords = [...response.data];
       activateCCTVMarkers();
