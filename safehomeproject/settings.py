@@ -78,6 +78,7 @@ WSGI_APPLICATION = 'safehomeproject.wsgi.application'
 
 
 # Database
+# RDS
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
@@ -87,6 +88,7 @@ DATABASES = {
         'USER': 'admin',
         'PASSWORD': '!WhdgkqtjfrP9',
         'HOST': 'https://safehomenav.shop/',
+        'PORT': '3306',
     }
 }
 
