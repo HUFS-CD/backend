@@ -378,7 +378,7 @@
   });
 
   axios
-    .get("http://127.0.0.1:8000/cctv/")
+    .get("cctv-database.cwpl95oqcakk.ap-northeast-2.rds.amazonaws.com")
     .then((response) => {
       coords = [...response.data];
       activateCCTVMarkers();
