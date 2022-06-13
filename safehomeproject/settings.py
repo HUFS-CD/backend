@@ -87,6 +87,7 @@ DATABASES = {
         'USER': 'admin',
         'PASSWORD': '!WhdgkqtjfrP9',
         'HOST': 'https://safehomenav.shop/',
+        'PORT': '3306',
     }
 }
 
