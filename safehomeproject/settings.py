@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'cctv-database',
         'USER': 'admin',
         'PASSWORD': '!WhdgkqtjfrP9',
-        'HOST': 'https://safehomenav.shop/',
+        'HOST': 'cctv-database.cwpl95oqcakk.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
