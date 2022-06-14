@@ -378,9 +378,9 @@
   });
 
   axios
-    .get("cctv-database.cwpl95oqcakk.ap-northeast-2.rds.amazonaws.com:3306/cctv", {
+    .get("https://cctv-database.cwpl95oqcakk.ap-northeast-2.rds.amazonaws.com:3306/cctv", {
       headers: {
-        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Origin' : "*",
       }
     })
     .then((response) => {
